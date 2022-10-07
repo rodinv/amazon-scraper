@@ -45,6 +45,10 @@ func (c Client) GetAppInfo(asin string) (*AppInfo, error) {
 		}
 	})
 
+	scraper.OnHTML("[data-hook=\"rating-out-of-text\"]", func(e *colly.HTMLElement) {
+		app.Rating = e.Text
+	})
+
 	err := scraper.Visit(fmt.Sprintf("http://www.amazon.com/dp/%s", asin))
 	if err != nil {
 		switch {

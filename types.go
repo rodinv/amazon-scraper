@@ -8,6 +8,7 @@ type AppInfo struct {
 	Developer   string
 	Title       string
 
+	Rating      string
 	Icon        string
 	Screenshots []string
 }

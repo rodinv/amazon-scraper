@@ -24,6 +24,12 @@ func TestClient_GetAppInfo(t *testing.T) {
 			},
 		},
 		{
+			name: "success",
+			args: args{
+				asin: "B0BG93Y2QB",
+			},
+		},
+		{
 			name: "not found",
 			args: args{
 				asin: "XXXXXXXXXX",
